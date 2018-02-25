@@ -58,7 +58,19 @@ class EmojiTableViewController: UITableViewController {
         finger.birthDate = 2016
         finger.category = "Faces"
         
-        return [smiley, finger]
+        let shit = Emoji()
+        shit.emojiIcon = "💩"
+        shit.emojiDef = "Got to shit!"
+        shit.birthDate = 2010
+        shit.category = "Faces"
+        
+        let basketball = Emoji()
+        basketball.emojiIcon = "🏀"
+        basketball.emojiDef = "Let's go play ball!"
+        basketball.birthDate = 2013
+        basketball.category = "Sports"
+        
+        return [smiley, finger, shit, basketball]
         
     }
 }
