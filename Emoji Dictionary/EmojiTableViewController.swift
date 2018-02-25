@@ -10,11 +10,11 @@ import UIKit
 
 class EmojiTableViewController: UITableViewController {
     
-    var emojis = ["😀", "💩", "🖕", "🏀", "🎮", "🍕"]
+    var emojis : [Emoji] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        emojis = createEmojis()
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -24,7 +24,9 @@ class EmojiTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath)
 
-        cell.textLabel?.text = emojis[indexPath.row]
+        let emoji = emojis[indexPath.row]
+        
+        cell.textLabel?.text = "\(emoji.emojiIcon) - \(emoji.category)"
         
         return cell
     }
@@ -40,7 +42,23 @@ class EmojiTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let emojiDefVC = segue.destination as! EmojiDefinitionViewController
         
-        emojiDefVC.emoji = sender as! String
+        emojiDefVC.emoji = sender as! Emoji
     }
 
+    func createEmojis() -> [Emoji] {
+        let smiley = Emoji()
+        smiley.emojiIcon = "😀"
+        smiley.emojiDef = "Happy Face!"
+        smiley.birthDate = 2010
+        smiley.category = "Faces"
+        
+        let finger = Emoji()
+        finger.emojiIcon = "🖕"
+        finger.emojiDef = "Fuck You!"
+        finger.birthDate = 2016
+        finger.category = "Faces"
+        
+        return [smiley, finger]
+        
+    }
 }

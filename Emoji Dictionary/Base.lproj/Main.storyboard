@@ -60,6 +60,18 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A videogame controller" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6HS-xp-p4B">
                                 <rect key="frame" x="10" y="705" width="394" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Birth Year: 2013" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Y4-DN-o7O">
+                                <rect key="frame" x="146" y="676" width="122" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category: Games" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pT2-Cc-y2F">
+                                <rect key="frame" x="140.66666666666666" y="647" width="132.99999999999997" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -67,15 +79,21 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="1Y4-DN-o7O" firstAttribute="top" secondItem="pT2-Cc-y2F" secondAttribute="bottom" constant="8" id="1jX-KE-wT9"/>
                             <constraint firstItem="ux8-8B-gho" firstAttribute="trailing" secondItem="6HS-xp-p4B" secondAttribute="trailing" constant="10" id="Kcx-RL-Ppq"/>
                             <constraint firstItem="nmj-Th-8YR" firstAttribute="centerX" secondItem="jdj-93-hge" secondAttribute="centerX" id="N3y-LW-7Zg"/>
                             <constraint firstItem="nmj-Th-8YR" firstAttribute="top" secondItem="ux8-8B-gho" secondAttribute="top" constant="20" id="Nb7-yh-0FS"/>
                             <constraint firstItem="ux8-8B-gho" firstAttribute="bottom" secondItem="6HS-xp-p4B" secondAttribute="bottom" constant="10" id="Tkt-8c-beF"/>
+                            <constraint firstItem="pT2-Cc-y2F" firstAttribute="centerX" secondItem="jdj-93-hge" secondAttribute="centerX" id="hl0-Un-h7R"/>
+                            <constraint firstItem="1Y4-DN-o7O" firstAttribute="centerX" secondItem="jdj-93-hge" secondAttribute="centerX" id="nk7-3j-aLy"/>
                             <constraint firstItem="6HS-xp-p4B" firstAttribute="leading" secondItem="ux8-8B-gho" secondAttribute="leading" constant="10" id="vcf-hS-nd6"/>
+                            <constraint firstItem="6HS-xp-p4B" firstAttribute="top" secondItem="1Y4-DN-o7O" secondAttribute="bottom" constant="8" id="zDJ-8l-qym"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ux8-8B-gho"/>
                     </view>
                     <connections>
+                        <outlet property="birthLabel" destination="1Y4-DN-o7O" id="IsZ-L5-Gfl"/>
+                        <outlet property="categoryLabel" destination="pT2-Cc-y2F" id="WEv-fV-bEq"/>
                         <outlet property="emojiDefinitionLabel" destination="6HS-xp-p4B" id="5KA-na-6gB"/>
                         <outlet property="emojiLabel" destination="nmj-Th-8YR" id="4fy-zD-d3Q"/>
                     </connections>

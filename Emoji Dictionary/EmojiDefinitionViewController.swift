@@ -12,31 +12,19 @@ class EmojiDefinitionViewController: UIViewController {
     
     @IBOutlet weak var emojiLabel: UILabel!
     @IBOutlet weak var emojiDefinitionLabel: UILabel!
+    @IBOutlet weak var birthLabel: UILabel!
+    @IBOutlet weak var categoryLabel: UILabel!
     
-    var emoji = ""
+    var emoji = Emoji()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        emojiLabel.text = emoji.emojiIcon
+        emojiDefinitionLabel.text = emoji.emojiDef
+        birthLabel.text = "Release Date: \(emoji.birthDate)"
+        categoryLabel.text = "Category: \(emoji.category)"
 
-        emojiLabel.text = emoji
-        
-        //["😀", "💩", "🖕", "🏀", "🎮", "🍕"]
-        
-        if emoji == "🖕" {
-            emojiDefinitionLabel.text = "Fuck You!"
-        }
-        
-        if emoji == "💩" {
-            emojiDefinitionLabel.text = "I got to shit"
-        }
-        
-        if emoji == "🍕" {
-            emojiDefinitionLabel.text = "I'm hungry for pizza"
-        }
-        
-        if emoji == "🏀" {
-            emojiDefinitionLabel.text = "Time to ball out"
-        }
     }
 
 }
